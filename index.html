@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="main-style.css">
+    <link rel="stylesheet" href="css/main-style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
 </head>
@@ -18,49 +18,112 @@
 <body>
     <section class="main">
         <section class="container">
+            <!-- FIRST ROW FORMS -->
             <div class="row page-content">
-                <!-- قايمة حساب قيمة قسط التكييفات -->
+                <!-- AIR CONDITIONERS FORM -->
                 <div class="col-md-5 AC-form">
                     <div class="heading">
                         <h3 class="AC-title mb-4">حساب قسط التكييفات بدون فائدة علي 6 و 12 شهر</h3>
                     </div>
                     <div class="form-group">
-                        <label for="acDevicePrice">سعر التكييف</label>
-                        <input type="" name="" id="acDevicePrice" class="form-control" placeholder=""
-                            aria-describedby="helpId" oninput="acMinimumCalc()">
-                        <label for="acDownPayment" class="pt-3">المقدم</label>
-                        <input type="" name="" id="acDownPayment" class="form-control" placeholder=""
-                            aria-describedby="helpId" oninput="airConditionerCalc()">
-                        <p class="minimum-down-payment">أقل مقدم هو <span id="aCMinimumDownPayment"></span></p>
+                        <label for="formOneDevicePrice">سعر التكييف</label>
+                        <input type="" name="" id="formOneDevicePrice" class="form-control" placeholder=""
+                            aria-describedby="helpId" oninput="formOneMinimumDownPaymentCalc()">
+                        <label for="formOneDownPayment" class="pt-3">المقدم</label>
+                        <input type="" name="" id="formOneDownPayment" class="form-control" placeholder=""
+                            aria-describedby="helpId" oninput="formOneCalc()">
+                        <p class="minimum-down-payment">
+                            أقل مقدم هو <span id="formOneMinimumDownPayment"></span>
+                        </p>
                         <div class="Results py-2">
-                            <p class="result">علي 6 شهور بدون فائدة = <span id="acOption1">0</span></p>
-                            <p class="result">علي 12 شهر بدون فائدة = <span id="acOption2">0</span></p>
-                            <p class="result">علي 18 شهور بفائدة %10 = <span id="acOption3">0</span></p>
-                            <p class="result">علي 24 شهور بفائدة %20 = <span id="acOption4">0</span></p>
+                            <p class="result">
+                                علي 6 شهور بفائدة <span style="color: darkorange;" id="airPercentage1"></span> = <span id="airResult1">0</span>
+                            </p>
+                            <p class="result">
+                                علي 12 شهر بفائدة <span style="color: darkorange;" id="airPercentage2"></span> = <span id="airResult2">0</span>
+                            </p>
+                            <p class="result">
+                                علي 18 شهر بفائدة <span style="color: darkorange;" id="airPercentage3"></span> = <span id="airResult3">0</span>
+                            </p>
+                            <p class="result">
+                                علي 24 شهر بفائدة <span style="color: darkorange;" id="airPercentage4"></span> = <span id="airResult4">0</span>
+                            </p>
                         </div>
+                        <p style="color:#888; font-size: 14;">*الأقساط لا تشمل مصاريف التحصيل (40 جنية)</p>
                     </div>
                 </div>
                 <div class="col-md-2 py-3"></div>
-                <!-- Home Applainces Form -->
+                <!-- HOME APPLAINCES FORM -->
                 <div class="col-md-5 HD-form">
                     <div class="heading">
-                        <h3 class="HD-title mb-4">حساب قسط الأجهزة المنزلية بالفوائد علي كل فترات التقسيط
+                        <h3 class="HD-title mb-4">
+                            حساب قسط الأجهزة المنزلية بالفوائد علي كل فترات التقسيط
                         </h3>
                     </div>
                     <div class="form-group">
-                        <label for="hdDevicePrice">سعر الجهاز</label>
-                        <input type="" name="" id="hdDevicePrice" class="form-control" placeholder=""
-                            aria-describedby="helpId" oninput="hdMinimumCalc()">
-                        <label for="hdDownPayment" class="pt-3">المقدم</label>
-                        <input type="" name="" id="hdDownPayment" class="form-control" placeholder=""
-                            aria-describedby="helpId" oninput="homeApplainceCalc()">
-                        <p class="minimum-down-payment">أقل مقدم هو <span id="hDMinimumDownPayment"></span></p>
+                        <label for="formTwoDevicePrice">سعر الجهاز</label>
+                        <input type="" name="" id="formTwoDevicePrice" class="form-control" placeholder=""
+                            aria-describedby="helpId" oninput="formTwoMinimumDownPaymentCalc()">
+                        <label for="formTwoDownPayment" class="pt-3">المقدم</label>
+                        <input type="" name="" id="formTwoDownPayment" class="form-control" placeholder=""
+                            aria-describedby="helpId" oninput="formTwoCalc()">
+                        <p class="minimum-down-payment">
+                            أقل مقدم هو <span id="formTwoMinimumDownPayment"></span>
+                        </p>
                         <div class="Results py-2">
-                            <p class="result">علي 6 شهور بفائدة <span style="color: darkorange;" id="HDper1"></span> = <span id="hdOption1">0</span></p>
-                            <p class="result">علي 12 شهر بفائدة <span style="color: darkorange;" id="HDper2"></span> = <span id="hdOption2">0</span></p>
-                            <p class="result">علي 18 شهور بفائدة <span style="color: darkorange;" id="HDper3"></span> = <span id="hdOption3">0</span></p>
-                            <p class="result">علي 24 شهور بفائدة <span style="color: darkorange;" id="HDper4"></span> = <span id="hdOption4">0</span></p>
+                            <p class="result">
+                                علي 6 شهور بفائدة <span style="color: darkorange;" id="homePercentage1"></span> = <span id="homeResult1">0</span>
+                            </p>
+                            <p class="result">
+                                علي 12 شهر بفائدة <span style="color: darkorange;" id="homePercentage2"></span> = <span id="homeResult2">0</span>
+                            </p>
+                            <p class="result">
+                                علي 18 شهر بفائدة <span style="color: darkorange;" id="homePercentage3"></span> = <span id="homeResult3">0</span>
+                            </p>
+                            <p class="result">
+                                علي 24 شهر بفائدة <span style="color: darkorange;" id="homePercentage4"></span> = <span id="homeResult4">0</span>
+                            </p>
                         </div>
+                        <p style="color:#888; font-size: 14;">*الأقساط لا تشمل مصاريف التحصيل (40 جنية)</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF FIRST ROW FORMS -->
+            <!-- Second Row Forms -->
+            <div class="row page-content">
+                <div class="col-md-2 py-3"></div>
+                <!-- Home Applainces Form "Mother's day Edition" -->
+                <div class="col-md-8 HD-form">
+                    <div class="heading">
+                        <h3 class="HD-title mb-4">
+                            حساب قسط الأجهزة المنزلية بدون فائدة علي سنه لعيد الأم
+                        </h3>
+                    </div>
+                    <div class="form-group">
+                        <label for="formThreeDevicePrice">سعر الجهاز</label>
+                        <input type="" name="" id="formThreeDevicePrice" class="form-control" placeholder=""
+                            aria-describedby="helpId" oninput="formThreeMinimumDownPaymentCalc()">
+                        <label for="formThreeDownPayment" class="pt-3">المقدم</label>
+                        <input type="" name="" id="formThreeDownPayment" class="form-control" placeholder=""
+                            aria-describedby="helpId" oninput="formThreeCalc()">
+                        <p class="minimum-down-payment">
+                            أقل مقدم هو <span id="formThreeMinimumDownPayment"></span>
+                        </p>
+                        <div class="Results py-2">
+                            <p class="result">
+                                علي 6 شهور بفائدة <span style="color: darkorange;" id="offerPercentage1"></span> = <span id="offerResult1">0</span>
+                            </p>
+                            <p class="result">
+                                علي 12 شهر بفائدة <span style="color: darkorange;" id="offerPercentage2"></span> = <span id="offerResult2">0</span>
+                            </p>
+                            <p class="result">
+                                علي 18 شهر بفائدة <span style="color: darkorange;" id="offerPercentage3"></span> = <span id="offerResult3">0</span>
+                            </p>
+                            <p class="result">
+                                علي 24 شهر بفائدة <span style="color: darkorange;" id="offerPercentage4"></span> = <span id="offerResult4">0</span>
+                            </p>
+                        </div>
+                        <p style="color:#888; font-size: 14;">*الأقساط لا تشمل مصاريف التحصيل (40 جنية)</p>
                     </div>
                 </div>
             </div>
@@ -84,7 +147,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

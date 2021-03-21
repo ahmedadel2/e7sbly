@@ -1,0 +1,51 @@
+body {
+    overflow: auto;
+    height: auto;
+    width: auto;
+    /* background: url(assets/website-background.jpg) center center no-repeat; */
+    background-color: #222;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.page-content {
+    padding: 50px 0px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+}
+
+.HD-form,
+.AC-form {
+    padding: 20px;
+    border: 8px solid #DAA520;
+    background-color: #F9F9F9;
+    text-align: right;
+}
+
+.HD-form input,
+.AC-form input {
+    border-radius: 0 !important;
+    border: 3px solid #090b0a;
+    direction: rtl;
+}
+
+.HD-form input:focus,
+.AC-form input:focus {
+    border: 3px solid #DAA520;
+    box-shadow: none;
+}
+
+footer {
+    height: auto;
+    width: 100%;
+    background-color: #F9F9F9;
+}
+
+.footer-content {
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-content span {
+    display: block;
+}
